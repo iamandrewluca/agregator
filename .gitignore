@@ -3,3 +3,7 @@
 Homestead.json
 Homestead.yaml
 .env
+.vagrant
+public/admin
+public/main
+public/index.html

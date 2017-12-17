@@ -29,7 +29,13 @@
     "scripts": {
         "post-root-package-install": [
             "php -r \"copy('.env.example', '.env');\""
-        ]
+        ],
+
+        "frontend": "composer run buildadmin && composer run buildmain",
+        "buildadmin": "cd front/admin && yarn build",
+        "buildmain": "cd front/main && yarn build",
+
+        "dist": "echo \"To be continued...\""
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
