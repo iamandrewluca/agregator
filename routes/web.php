@@ -11,6 +11,22 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+/** @var \Laravel\Lumen\Routing\Router $router */
+$router->get('/api', function () use ($router) {
+//    $feed = new SimplePie();
+//    $feed->set_feed_url("http://agora.md/rss/news");
+//    $feed->set_cache_location('../.cache');
+//    $feed->init();
+//    return $feed->get_items(0, 0)[0]->get_categories();
+    return 'api';
+});
+
+
+// Catch all routes
+$router->get('/admin/{url:.+}', function () use ($router) {
+    return file_get_contents('../public/admin/index.html');
+});
+
+$router->get('/{url:.+}', function () use ($router) {
+    return file_get_contents('../public/index.html');
 });
