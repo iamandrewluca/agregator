@@ -12,21 +12,21 @@
 */
 
 /** @var \Laravel\Lumen\Routing\Router $router */
-$router->get('/api', function () use ($router) {
-//    $feed = new SimplePie();
-//    $feed->set_feed_url("http://agora.md/rss/news");
-//    $feed->set_cache_location('../.cache');
-//    $feed->init();
-//    return $feed->get_items(0, 0)[0]->get_categories();
-    return 'api';
+$router->group(['prefix' => 'api'], function () use ($router) {
+
+    $router->get('/channels', 'ChannelController@all');
+    $router->post('/channels', 'ChannelController@create');
+
+    // Catch all routes
+    $router->get('/{url:.*}', function () { return ["Aggregator API"]; });
+    $router->get('/', function () use ($router) { return $router->getRoutes(); });
 });
 
 
 // Catch all routes
-$router->get('/admin/{url:.+}', function () use ($router) {
+$router->get('/admin/{url:.*}', function () {
     return file_get_contents('../public/admin/index.html');
 });
-
-$router->get('/{url:.+}', function () use ($router) {
-    return file_get_contents('../public/index.html');
+$router->get('/{url:.*}', function () {
+    return file_get_contents('../public/main/index.html');
 });

@@ -5,8 +5,15 @@
     "homepage": "/admin",
     "proxy": "http://agregator.test/",
     "dependencies": {
+        "bootstrap": "^4.0.0-beta.2",
+        "exports-loader": "^0.6.4",
+        "jquery": "^3.2.1",
+        "lodash.debounce": "^4.0.8",
+        "popper.js": "^1.12.9",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
+        "react-router": "^4.2.0",
+        "react-router-dom": "^4.2.2",
         "react-scripts": "1.0.17"
     },
     "scripts": {
@@ -14,7 +21,6 @@
         "build": "react-scripts build",
         "test": "react-scripts test --env=jsdom",
         "eject": "react-scripts eject",
-
         "postbuild": "rm -rf ../../public/admin && mv build ../../public/admin"
     }
 }
