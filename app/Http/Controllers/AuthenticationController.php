@@ -45,7 +45,7 @@ class AuthenticationController extends Controller
         } else {
             return [
                 'status' => 'FAILURE',
-                'message' => 'Username or password wrong',
+                'message' => 'Username or password wrong.',
             ];
         }
 
