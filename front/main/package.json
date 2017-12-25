@@ -2,7 +2,7 @@
     "name": "main",
     "version": "0.1.0",
     "private": true,
-    "homepage": "/main",
+    "homepage": "/m",
     "proxy": "http://agregator.test/",
     "dependencies": {
         "bootstrap": "^4.0.0-beta.2",
@@ -21,9 +21,6 @@
         "build": "react-scripts build",
         "test": "react-scripts test --env=jsdom",
         "eject": "react-scripts eject",
-
-        "postbuild": "yarn copyindex && yarn movebuild",
-        "copyindex": "cp build/index.html ../../public/index.html",
-        "movebuild": "rm -rf ../../public/main && mv build ../../public/main"
+        "postbuild": "rm -rf ../../public/m && mv build ../../public/m"
     }
 }

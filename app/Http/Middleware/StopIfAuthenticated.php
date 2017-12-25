@@ -38,7 +38,7 @@ class StopIfAuthenticated
         if ($this->auth->guard($guard)->check()) {
             return response([
                 'status' => 'FAILURE',
-                'message' => 'Unauthorized.',
+                'message' => 'Still logged.',
             ], 401);
         }
         return $next($request);

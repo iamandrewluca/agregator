@@ -2,7 +2,7 @@
     "name": "admin",
     "version": "0.1.0",
     "private": true,
-    "homepage": "/admin",
+    "homepage": "/a",
     "proxy": "http://agregator.test/",
     "dependencies": {
         "bootstrap": "^4.0.0-beta.2",
@@ -21,6 +21,6 @@
         "build": "react-scripts build",
         "test": "react-scripts test --env=jsdom",
         "eject": "react-scripts eject",
-        "postbuild": "rm -rf ../../public/admin && mv build ../../public/admin"
+        "postbuild": "rm -rf ../../public/a && mv build ../../public/a"
     }
 }

@@ -3,9 +3,9 @@ Homestead.json
 Homestead.yaml
 .env
 .vagrant
-public/admin
-public/main
-public/index.html
+public/*
+!public/index.php
+!public/.htaccess
 
 # SimplePie Cache
 .cache
