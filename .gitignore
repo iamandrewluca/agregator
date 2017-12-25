@@ -1,5 +1,4 @@
 /vendor
-/.idea
 Homestead.json
 Homestead.yaml
 .env
@@ -10,3 +9,4 @@ public/index.html
 
 # SimplePie Cache
 .cache
+.idea

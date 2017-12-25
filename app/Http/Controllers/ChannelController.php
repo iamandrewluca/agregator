@@ -14,13 +14,28 @@ class ChannelController extends Controller
         //
     }
 
-    public function all()
+    public function index()
     {
         return Channel::all();
     }
 
-    public function create()
+    public function store()
     {
+        return Channel::all();
+    }
 
+    public function show()
+    {
+        return Channel::all();
+    }
+
+    public function update()
+    {
+        return Channel::all();
+    }
+
+    public function destroy()
+    {
+        return Channel::all();
     }
 }

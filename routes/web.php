@@ -12,10 +12,20 @@
 */
 
 /** @var \Laravel\Lumen\Routing\Router $router */
+
+$router->group(['prefix' => 'auth'], function () use ($router) {
+    $router->post('/signin', 'AuthenticationController@signIn');
+    $router->post('/signout', 'AuthenticationController@signOut');
+    $router->post('/signup', 'AuthenticationController@signUp');
+});
+
+
 $router->group(['prefix' => 'api'], function () use ($router) {
 
-    $router->get('/channels', 'ChannelController@all');
-    $router->post('/channels', 'ChannelController@create');
+    $router->get('/channels', 'ChannelController@index');
+    $router->post('/channels', 'ChannelController@store');
+    $router->put('/channels/{id}', 'ChannelController@update');
+    $router->delete('/channels/{id}', 'ChannelController@desotry');
 
     // Catch all routes
     $router->get('/{url:.*}', function () { return ["Aggregator API"]; });
