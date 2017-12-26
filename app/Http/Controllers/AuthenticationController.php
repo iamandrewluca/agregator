@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -34,7 +33,7 @@ class AuthenticationController extends Controller
             'email' => $request->input('email')
         ])->first();
 
-        if (Hash::check($request->input('password'), $user->password)) {
+        if ($user && Hash::check($request->input('password'), $user->password)) {
             $user->api_token = str_random(60);
             $user->save();
 
@@ -65,25 +64,25 @@ class AuthenticationController extends Controller
 
     public function signUp(Request $request)
     {
-        if (User::all()->count()) {
-            return [
-                'status' => 'FAILURE',
-                'message' => 'Only one user allowed to register in system',
-            ];
-        }
-
-        $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:8',
-        ]);
-
-        $user = new User($request->only(['name', 'email']));
-        $user->password = Hash::make($request->input('password'));
-        $user->api_token = str_random(60);
-
-        $user->save();
-
-        return $user;
+//        if (User::all()->count()) {
+//            return [
+//                'status' => 'FAILURE',
+//                'message' => 'Only one user allowed to register in system',
+//            ];
+//        }
+//
+//        $this->validate($request, [
+//            'name' => 'required',
+//            'email' => 'required|email|unique:users',
+//            'password' => 'required|min:8',
+//        ]);
+//
+//        $user = new User($request->only(['name', 'email']));
+//        $user->password = Hash::make($request->input('password'));
+//        $user->api_token = str_random(60);
+//
+//        $user->save();
+//
+//        return $user;
     }
 }

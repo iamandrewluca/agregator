@@ -6,6 +6,6 @@ const Header = () => (
       <a className="navbar-brand" href="/admin">Agregator Admin</a>
     </div>
   </nav>
-)
+);
 
 export default Header

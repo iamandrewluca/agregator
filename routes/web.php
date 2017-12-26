@@ -20,7 +20,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         // Auth routes
         $router->post('/signin', 'AuthenticationController@signIn');
         $router->post('/signout', 'AuthenticationController@signOut');
-        $router->post('/signup', 'AuthenticationController@signUp');
+//        $router->post('/signup', 'AuthenticationController@signUp');
 
         // Resources routes
         $router->get('/channels', 'ChannelController@index');

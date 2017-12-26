@@ -6,7 +6,7 @@ const Footer = () => (
     <div>
       Developed by&nbsp;
       <a
-        href="https://twitter.com/iamandrewluca"
+        href="https://iamandrewluca.com"
         target="_blank"
         rel="noopener noreferrer"
         className="badge badge-pill badge-warning">

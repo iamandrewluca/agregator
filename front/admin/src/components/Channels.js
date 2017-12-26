@@ -6,8 +6,8 @@ import SourceForm from './SourceForm.js';
 class Sources extends Component {
 
   componentDidMount() {
-    if (!this.props.sources) {
-      this.props.fetchSources()
+    if (!this.props.channels) {
+      this.props.fetchChannels()
     }
   }
 
